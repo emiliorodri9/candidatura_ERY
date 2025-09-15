@@ -13,3 +13,15 @@ button{padding:.6rem 1rem;border-radius:8px;border:1px solid #ccc;cursor:pointer
   header{flex-direction:column;align-items:flex-start}
   nav{margin-top:.5rem}
 }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  /* Fondo con tu imagen */
+  background-image: url("images/rm.png");
+  background-size: cover;      /* La imagen se ajusta al tamaño de la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-attachment: fixed;/* La fija al hacer scroll */
+  color: white;                /* Texto blanco para que contraste */
+}
