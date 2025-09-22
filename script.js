@@ -1,35 +1,69 @@
-// Scroll suave y animaciones con IntersectionObserver
 document.addEventListener("DOMContentLoaded", () => {
-  // Scroll suave
-  document.querySelectorAll(".navbar a").forEach(link => {
+  // Scroll suave + active link
+  const links = document.querySelectorAll(".navbar a");
+  links.forEach(link => {
     link.addEventListener("click", e => {
       e.preventDefault();
-      const href = link.getAttribute("href");
-      const target = document.querySelector(href);
+      const target = document.querySelector(link.getAttribute("href"));
       if (target) {
-        const topNote = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--topnote-h')) || 40;
-        const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--navbar-h')) || 56;
-        const offset = (topNote + navH) + 18; // ajustar por el top-note + navbar
-        const rect = target.getBoundingClientRect();
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        const targetPos = rect.top + scrollTop - offset;
-        window.scrollTo({ top: targetPos, behavior: 'smooth' });
+        const offset = 110; // altura menú+nota
+        const top = target.offsetTop - offset;
+        window.scrollTo({ top, behavior: "smooth" });
       }
     });
   });
 
-  // IntersectionObserver para animar las cards al entrar en viewport
-  const observer = new IntersectionObserver((entries) => {
+  // Observer para animar secciones
+  const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-        // opcional: dejar de observar una vez visible
-        observer.unobserve(entry.target);
+        entry.target.classList.add("show");
       }
     });
-  }, { threshold: 0.18 });
+  }, { threshold: 0.2 });
 
-  document.querySelectorAll('.card').forEach(card => observer.observe(card));
+  document.querySelectorAll(".card").forEach(card => observer.observe(card));
+
+  // Highlight menú activo
+  const sections = document.querySelectorAll("main section");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(sec => {
+      const secTop = sec.offsetTop - 150;
+      if (scrollY >= secTop) current = "#" + sec.id;
+    });
+    links.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === current) {
+        link.classList.add("active");
+      }
+    });
+  });
+
+  // Modal cine
+  const modal = document.getElementById("video-modal");
+  const modalVideo = document.getElementById("modal-video");
+  const closeBtn = document.querySelector(".close");
+
+  document.querySelectorAll(".video-preview").forEach(v => {
+    v.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalVideo.src = v.querySelector("source").src;
+      modalVideo.play();
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+    modalVideo.pause();
+    modalVideo.src = "";
+  });
+
+  modal.addEventListener("click", e => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      modalVideo.pause();
+      modalVideo.src = "";
+    }
+  });
 });
-
-
