@@ -1,167 +1,216 @@
+:root{
+  --topnote-h: 40px;
+  --navbar-h: 56px;
+  --header-gap: 24px;
+  --container-max: 1000px;
+}
+
+/* Basicos */
+* { box-sizing: border-box; }
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   background: #f7f9fc;
-  color: #333;
-  text-align: center;
+  color: #222;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+}
+
+/* Nota superior (antes del menú) */
+.top-note {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--topnote-h);
+  background: #ffcc00;
+  color: #003366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  z-index: 1002;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 
 /* Navbar */
 .navbar {
   position: fixed;
-  top: 0;
+  top: var(--topnote-h);
   left: 0;
-  width: 100%;
+  right: 0;
+  height: var(--navbar-h);
   background: #003366;
-  padding: 10px 0;
-  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .navbar ul {
   list-style: none;
-  display: flex;
-  justify-content: center;
   margin: 0;
   padding: 0;
-}
-
-.navbar li {
-  margin: 0 15px;
+  display:flex;
+  gap: 18px;
+  align-items:center;
 }
 
 .navbar a {
   color: #fff;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: background 0.18s, color 0.18s;
 }
+.navbar a:hover { background: rgba(255,255,255,0.06); color: #ffcc00; }
 
-.navbar a:hover {
-  color: #ffcc00;
-}
-
-.menu-note {
-  margin: 5px 0 0;
-  font-size: 0.85rem;
-  color: #ddd;
-  text-align: center;
-}
-
-/* Header */
+/* Encabezado centrado y compacto */
 .main-header {
-  margin-top: 90px; /* espacio por el menú */
-  background: linear-gradient(135deg, #006699, #0099cc);
+  margin: calc(var(--topnote-h) + var(--navbar-h) + 18px) auto 0;
+  max-width: var(--container-max);
+  padding: 28px;
+  background: linear-gradient(135deg, #00669988, #0099cc88);
+  border-radius: 12px;
   color: white;
-  padding: 30px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.header-inner {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 18px;
 }
 
 .header-left {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
 }
 
-.main-header .logo {
-  height: 50px; /* más pequeño */
+.logo {
+  height: 46px;           /* más pequeño para que quepa en línea */
+  width: auto;
+  flex-shrink: 0;
+}
+
+.header-text {
+  text-align: left;       /* título junto al logo, alineado a la izquierda dentro de la tarjeta centrada */
+  overflow: hidden;
 }
 
 .header-text h1 {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.45rem;
+  line-height: 1.05;
+  font-weight: 700;
 }
 
-.header-text p {
-  margin: 5px 0 0;
+.subtitle {
+  margin: 6px 0 0;
   font-weight: 300;
+  opacity: 0.95;
 }
 
+/* Foto */
 .header-right {
-  margin-top: 10px;
+  flex-shrink: 0;
 }
-
-.main-header .profile-photo {
-  height: 100px;
+.profile-photo {
+  height: 96px;
+  width: 96px;
+  object-fit: cover;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 3px solid rgba(255,255,255,0.85);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
-/* Main */
+/* Main container */
 main {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
+  max-width: var(--container-max);
+  margin: 28px auto;
+  padding: 0 18px 60px;
 }
 
-/* Cards */
+/* Cards y animación por defecto (ocultas hasta entrar) */
 .card {
-  background: white;
-  padding: 25px;
-  margin: 30px auto;
-  border-radius: 14px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  opacity: 0; /* oculto antes de animar */
-  transform: translateY(30px);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 22px;
+  margin: 22px auto;
+  box-shadow: 0 8px 20px rgba(12,24,40,0.06);
+  opacity: 0;
+  transform: translateY(28px) scale(0.995);
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(.2,.9,.2,1);
+  text-align: center;
 }
 
 .card.show {
   opacity: 1;
-  transform: translateY(0);
-  transition: all 0.6s ease;
+  transform: translateY(0) scale(1);
 }
 
+/* Titulos y textos */
 .card h2 {
-  margin-bottom: 10px;
+  margin: 6px 0 8px;
   color: #003366;
+  font-size: 1.25rem;
 }
-
-.card p {
-  margin-bottom: 15px;
-  color: #555;
-}
+.card p { margin: 0 0 14px; color: #444; }
 
 /* Videos centrados */
 video {
-  display: block;
-  margin: 0 auto 15px auto;
+  display:block;
+  margin: 0 auto 14px;
   width: 80%;
-  max-width: 700px;
+  max-width: 780px;
   border-radius: 10px;
+  background: #000;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.08);
 }
 
 /* Botones */
-.btn-group {
-  margin-top: 15px;
-}
-
+.btn-group { margin-top: 8px; }
 .btn {
-  display: inline-block;
-  margin: 8px;
-  padding: 10px 18px;
+  display:inline-block;
+  margin: 6px;
+  padding: 9px 16px;
   background: #003366;
-  color: white;
+  color: #fff;
   border-radius: 8px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s;
+  text-decoration:none;
+  font-weight: 600;
+  transition: background .2s, color .2s;
 }
-
-.btn:hover {
-  background: #ffcc00;
-  color: #003366;
-}
+.btn:hover { background: #ffcc00; color: #003366; }
 
 /* Footer */
 footer {
+  max-width: var(--container-max);
+  margin: 30px auto 60px;
+  padding: 18px;
+  text-align:center;
+  color: #fff;
   background: #003366;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
+  border-radius: 10px;
 }
+
+/* Responsive: en pantallas pequeñas apilar */
+@media (max-width: 720px) {
+  .header-inner { flex-direction: column; align-items: center; gap: 12px; text-align:center; }
+  .header-text { text-align:center; }
+  .header-left { justify-content:center; }
+  .profile-photo { height:84px; width:84px; }
+  video { width: 94%; }
+  .navbar ul { gap: 10px; flex-wrap: wrap; padding: 6px 8px; }
+  main { padding: 0 12px 60px; }
+}
+
+
 
 
