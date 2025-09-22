@@ -1,27 +1,55 @@
-/* General */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
-  background: #f0f4f9;
+  background: #f5f7fa;
   color: #333;
-  text-align: center;
 }
 
-h1, h2 {
-  color: #003366;
-  margin-bottom: 10px;
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background: #003366;
+  padding-top: 20px;
+  z-index: 100;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+}
+
+.sidebar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  display: block;
+  padding: 10px 20px;
+  transition: background 0.3s;
+}
+
+.sidebar a:hover {
+  background: #005599;
+  border-radius: 6px;
 }
 
 /* Header */
 .main-header {
-  background: linear-gradient(135deg, #003366, #006699);
+  margin-left: 220px;
+  background: linear-gradient(135deg, #006699, #00aaff);
   color: white;
-  padding: 30px 20px;
-  height: 10cm; /* solicitado */
+  height: 10cm;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  padding: 20px;
 }
 
 .main-header .logo {
@@ -35,15 +63,14 @@ h1, h2 {
 }
 
 .header-text {
-  flex: 1;
   text-align: center;
+  flex: 1;
 }
 
 /* Main */
 main {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 0 15px;
+  margin-left: 220px;
+  padding: 20px;
 }
 
 /* Cards */
@@ -52,13 +79,9 @@ main {
   padding: 20px;
   margin: 20px auto;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  text-align: center;
+  animation: fadeInUp 0.6s ease;
 }
 
 video {
@@ -67,51 +90,34 @@ video {
   margin: 15px 0;
 }
 
-/* Links */
-.cv-links {
-  list-style: none;
-  padding: 0;
-}
-
-.cv-links a {
+.btn {
   display: inline-block;
-  margin: 5px 10px;
-  padding: 8px 14px;
+  margin: 10px;
+  padding: 10px 15px;
   background: #006699;
   color: white;
+  text-decoration: none;
   border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s ease;
+  transition: background 0.3s;
 }
 
-.cv-links a:hover {
+.btn:hover {
   background: #004466;
-}
-
-/* Contact */
-.contact ul {
-  list-style: none;
-  padding: 0;
-}
-
-.contact li {
-  margin: 6px 0;
-}
-
-.contact a {
-  color: #006699;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
 }
 
 /* Footer */
 footer {
+  margin-left: 220px;
   background: #003366;
   color: white;
   text-align: center;
-  padding: 15px;
-  margin-top: 30px;
+  padding: 20px;
 }
+
+/* Animación */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
