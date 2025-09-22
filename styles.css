@@ -13,7 +13,7 @@ body {
   left: 0;
   width: 100%;
   background: #003366;
-  padding: 15px 0;
+  padding: 10px 0;
   z-index: 1000;
 }
 
@@ -40,12 +40,19 @@ body {
   color: #ffcc00;
 }
 
+.menu-note {
+  margin: 5px 0 0;
+  font-size: 0.85rem;
+  color: #ddd;
+  text-align: center;
+}
+
 /* Header */
 .main-header {
-  margin-top: 80px; /* espacio por el menú */
+  margin-top: 90px; /* espacio por el menú */
   background: linear-gradient(135deg, #006699, #0099cc);
   color: white;
-  padding: 40px 20px;
+  padding: 30px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,16 +62,16 @@ body {
 .header-left {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .main-header .logo {
-  height: 80px;
+  height: 50px; /* más pequeño */
 }
 
 .header-text h1 {
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .header-text p {
@@ -73,11 +80,11 @@ body {
 }
 
 .header-right {
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .main-header .profile-photo {
-  height: 120px;
+  height: 100px;
   border-radius: 50%;
   border: 3px solid white;
 }
@@ -97,11 +104,14 @@ main {
   border-radius: 14px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  opacity: 0; /* oculto antes de animar */
+  transform: translateY(30px);
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease;
 }
 
 .card h2 {
@@ -153,4 +163,5 @@ footer {
   padding: 20px;
   margin-top: 40px;
 }
+
 
