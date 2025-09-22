@@ -3,11 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Candidatura Emilio Rodríguez Yustos - Máster Savills</title>
+  <title>Candidatura Emilio Rodríguez Yustos</title>
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
 <body>
+  <!-- Menú lateral -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="#presentacion">🎬 Presentación</a></li>
+      <li><a href="#vision">🌍 Visión 360º</a></li>
+      <li><a href="#motivacion">🔥 Motivación</a></li>
+      <li><a href="#caracteristicas">💡 Características</a></li>
+      <li><a href="#ia">🤖 IA y vivienda</a></li>
+      <li><a href="#otros">✨ Otros</a></li>
+      <li><a href="#contacto">📞 Contacto</a></li>
+    </ul>
+  </nav>
+
   <!-- Encabezado -->
   <header class="main-header">
     <img src="images/Savills.png" alt="Logo Savills" class="logo">
@@ -19,76 +32,67 @@
   </header>
 
   <main>
-    <section class="intro">
-      <p>¡Hola antes de nada! Mi nombre es <strong>Emilio</strong>, y actualmente trabajo como <strong>Data Analyst</strong> en el departamento de Valoraciones y Tasaciones.</p>
-      <p>He decidido presentar mi candidatura mediante una serie de videos que responden a todos los aspectos solicitados en el PDF adjunto. ¡Abróchense los cinturones y espero que disfruten de este “viaje”!</p>
+    <section class="intro card">
+      <p>¡Hola! Soy <strong>Emilio</strong>, actualmente trabajo como <strong>Data Analyst</strong> en Valoraciones y Tasaciones.</p>
+      <p>Os presento mi candidatura mediante videos que responden a lo solicitado. 🚀</p>
     </section>
 
     <!-- Videos -->
-    <section class="card">
+    <section id="presentacion" class="card">
       <h2>Presentación</h2>
       <video controls>
-        <source src="videos/Presentación.mp4" type="video/mp4">
+        <source src="videos/01. Presentación.mp4" type="video/mp4">
       </video>
-      <p>Para que me conozcáis mejor a nivel profesional, os dejo mi CV:</p>
-      <ul class="cv-links">
-        <li><a href="images/CV_ERY.pdf" target="_blank">CV en español</a></li>
-        <li><a href="images/CV_ERY_ENG.pdf" target="_blank">CV en inglés</a></li>
-      </ul>
+      <p>Para más detalles, podéis consultar mi CV:</p>
+      <a href="images/CV_ERY.pdf" target="_blank" class="btn">📄 CV Español</a>
+      <a href="images/CV_ERY_ENG.pdf" target="_blank" class="btn">📄 CV Inglés</a>
     </section>
 
-    <section class="card">
-      <h2>Importancia de una visión 360º</h2>
+    <section id="vision" class="card">
+      <h2>Visión 360º</h2>
       <video controls>
-        <source src="videos/Vision 360.mp4" type="video/mp4">
+        <source src="videos/02. Vision 360.mp4" type="video/mp4">
       </video>
     </section>
 
-    <section class="card">
-      <h2>Motivación personal</h2>
+    <section id="motivacion" class="card">
+      <h2>Motivación Personal</h2>
       <video controls>
-        <source src="videos/Motivacion Personal.mp4" type="video/mp4">
+        <source src="videos/03. Motivacion Personal.mp4" type="video/mp4">
       </video>
     </section>
 
-    <section class="card">
-      <h2>Características personales y profesionales</h2>
+    <section id="caracteristicas" class="card">
+      <h2>Características y Propuesta de Valor</h2>
       <video controls>
-        <source src="videos/Propuesta de valor.mp4" type="video/mp4">
+        <source src="videos/04. Propuesta de valor.mp4" type="video/mp4">
       </video>
     </section>
 
-    <section class="card">
+    <section id="ia" class="card">
       <h2>Uso de IA para vivienda accesible</h2>
       <video controls>
-        <source src="videos/Propuesta uso IA.mp4" type="video/mp4">
+        <source src="videos/05. Propuesta uso IA.mp4" type="video/mp4">
       </video>
     </section>
 
-    <section class="card">
+    <section id="otros" class="card">
       <h2>Otros aspectos</h2>
       <video controls>
         <source src="videos/06. Otros aspectos.mp4" type="video/mp4">
       </video>
     </section>
 
-    <section class="contact card">
+    <section id="contacto" class="card">
       <h2>Contacto</h2>
-      <p>Si necesitáis más información, podéis contactar conmigo:</p>
-      <ul>
-        <li>Email: <a href="mailto:emilio.rodriguez@savills.es">emilio.rodriguez@savills.es</a></li>
-        <li>Teléfono: <a href="tel:+34627472957">+34 627 47 29 57</a></li>
-        <li>Teams: disponible bajo solicitud</li>
-      </ul>
+      <p>📧 <a href="mailto:emilio.rodriguez@savills.es">emilio.rodriguez@savills.es</a></p>
+      <p>📱 <a href="tel:+34627472957">+34 627 47 29 57</a></p>
+      <p>💻 Teams disponible bajo solicitud</p>
     </section>
   </main>
 
   <footer>
-    <p>Gracias por la oportunidad de presentar mi candidatura.  
-    Un saludo,<br> <strong>Emilio</strong></p>
+    <p>Gracias por la oportunidad 🙏<br><strong>Emilio</strong></p>
   </footer>
 </body>
 </html>
-
-
-
