@@ -42,29 +42,44 @@ body {
 
 /* Header */
 .main-header {
-  margin-top: 80px; /* espacio para navbar */
+  margin-top: 80px; /* espacio por el menú */
   background: linear-gradient(135deg, #006699, #0099cc);
   color: white;
   padding: 40px 20px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .main-header .logo {
   height: 80px;
 }
 
+.header-text h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.header-text p {
+  margin: 5px 0 0;
+  font-weight: 300;
+}
+
+.header-right {
+  margin-top: 15px;
+}
+
 .main-header .profile-photo {
   height: 120px;
   border-radius: 50%;
   border: 3px solid white;
-}
-
-.header-text {
-  max-width: 500px;
 }
 
 /* Main */
@@ -89,12 +104,26 @@ main {
   box-shadow: 0 12px 28px rgba(0,0,0,0.12);
 }
 
-video {
-  width: 100%;
-  border-radius: 10px;
-  margin: 15px 0;
+.card h2 {
+  margin-bottom: 10px;
+  color: #003366;
 }
 
+.card p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+/* Videos centrados */
+video {
+  display: block;
+  margin: 0 auto 15px auto;
+  width: 80%;
+  max-width: 700px;
+  border-radius: 10px;
+}
+
+/* Botones */
 .btn-group {
   margin-top: 15px;
 }
