@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Candidatura Emilio Rodríguez Yustos</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
@@ -10,11 +10,11 @@
   <script defer src="script.js"></script>
 </head>
 <body>
-  <!-- Nota superior -->
-  <div class="top-note">📌 Menú de desplazamiento: haz clic para moverte 🚀</div>
+  <!-- Nota antes del menú -->
+  <div class="top-note">📌 Menú de desplazamiento: haz clic para moverte por la página 🚀</div>
 
-  <!-- Menú -->
-  <nav class="navbar">
+  <!-- Menú superior -->
+  <nav class="navbar" aria-label="Navegación principal">
     <ul>
       <li><a href="#presentacion">Presentación</a></li>
       <li><a href="#vision">Visión 360º</a></li>
@@ -27,7 +27,7 @@
   </nav>
 
   <!-- Encabezado -->
-  <header class="main-header">
+  <header class="main-header" role="banner">
     <div class="header-inner">
       <div class="header-left">
         <img src="images/Savills.png" alt="Savills" class="logo">
@@ -42,12 +42,18 @@
     </div>
   </header>
 
-  <!-- Contenido principal -->
   <main>
+    <section class="intro card fade-in">
+      <p>¡Hola! 👋 Soy <strong>Emilio</strong>, Data Analyst en Valoraciones y Tasaciones.  
+      Esta es mi candidatura en formato divertido y dinámico.</p>
+      <p>Prepárate: texto 👉 título 👉 vídeo… ¡y a disfrutar del viaje! 🎢</p>
+    </section>
+
+    <!-- Videos -->
     <section id="presentacion" class="card fade-in">
       <h2>🎬 Presentación</h2>
       <p>Un vistazo a mi trayectoria profesional y personal.</p>
-      <video controls>
+      <video controls class="video-preview">
         <source src="videos/01. Presentación.mp4" type="video/mp4">
       </video>
       <div class="btn-group">
@@ -59,7 +65,7 @@
     <section id="vision" class="card fade-in">
       <h2>🌍 Visión 360º</h2>
       <p>La visión global del sector es clave. Te cuento por qué.</p>
-      <video controls>
+      <video controls class="video-preview">
         <source src="videos/02. Vision 360.mp4" type="video/mp4">
       </video>
     </section>
@@ -67,7 +73,7 @@
     <section id="motivacion" class="card fade-in">
       <h2>🔥 Motivación Personal</h2>
       <p>Lo que me mueve día a día y mis metas.</p>
-      <video controls>
+      <video controls class="video-preview">
         <source src="videos/03. Motivacion Personal.mp4" type="video/mp4">
       </video>
     </section>
@@ -75,7 +81,7 @@
     <section id="caracteristicas" class="card fade-in">
       <h2>💡 Características y Propuesta de Valor</h2>
       <p>Mis fortalezas y lo que puedo aportar al máster.</p>
-      <video controls>
+      <video controls class="video-preview">
         <source src="videos/04. Propuesta de valor.mp4" type="video/mp4">
       </video>
     </section>
@@ -83,7 +89,7 @@
     <section id="ia" class="card fade-in">
       <h2>🤖 IA para vivienda accesible</h2>
       <p>Cómo la inteligencia artificial puede ayudar a solucionar retos del acceso a vivienda.</p>
-      <video controls>
+      <video controls class="video-preview">
         <source src="videos/05. Propuesta uso IA.mp4" type="video/mp4">
       </video>
     </section>
@@ -92,28 +98,31 @@
       <h2>✨ Otros aspectos</h2>
       <p>Ya cursé un máster trabajando a jornada completa. Fue duro… pero lo logré.  
       Aprendí a organizarme, mantener la energía y ¡hasta divertirme en el proceso!  
-      Estoy preparado para repetir el reto con más experiencia y motivación. 💪😄</p>
-      <video controls>
+      Eso me hace sentir preparado para volver a hacerlo, con más ganas y experiencia. 💪😄</p>
+      <video controls class="video-preview">
         <source src="videos/06. Otros aspectos.mp4" type="video/mp4">
       </video>
     </section>
 
     <section id="contacto" class="card fade-in">
       <h2>📞 Contacto</h2>
-      <p>
-        <a href="mailto:emilio.rodriguez@savills.es" class="contact-link">✉️ emilio.rodriguez@savills.es</a>
-      </p>
-      <p>
-        <a href="tel:+34627472957" class="contact-link">📱 +34 627 47 29 57 </a>
-      </p>
-      <p>
-        <a href="https://www.linkedin.com/in/emilio-rodríguez-yustos-66b02361/" target="_blank" class="contact-link">🔗 Emilio Rodríguez Yustos</a>
-      </p>
+      <p><a href="mailto:emilio.rodriguez@savills.es">emilio.rodriguez@savills.es</a></p>
+      <p><a href="tel:+34627472957">+34 627 47 29 57</a></p>
+      <p>Disponible en Teams 💻</p>
+      <p><a href="https://www.linkedin.com/in/emilio-rodríguez-yustos-66b02361/" target="_blank" class="contact-link">🔗 Emilio Rodríguez Yustos</a></p>
     </section>
   </main>
 
   <footer>
     <p>Gracias por la oportunidad 🙏 | Emilio</p>
   </footer>
+
+  <!-- Modal para modo cine -->
+  <div class="modal" id="video-modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <video controls id="modal-video"></video>
+    </div>
+  </div>
 </body>
 </html>
