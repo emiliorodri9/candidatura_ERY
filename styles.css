@@ -159,14 +159,10 @@ video {
   color: var(--blue);
   font-weight: 600;
   text-decoration: none;
+  margin: 6px 0;
 }
 
 .contact-link:hover { color: var(--yellow); }
-
-.contact-icon {
-  height: 20px;
-  width: 20px;
-}
 
 /* Footer */
 footer {
