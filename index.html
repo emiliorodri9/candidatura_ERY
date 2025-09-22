@@ -11,7 +11,7 @@
 </head>
 <body>
   <!-- Nota antes del menú -->
-  <div class="top-note">Menú de desplazamiento: haz clic para moverte por la página 🚀</div>
+  <div class="top-note">📌 Menú de desplazamiento: haz clic para moverte por la página 🚀</div>
 
   <!-- Menú superior -->
   <nav class="navbar" aria-label="Navegación principal">
@@ -36,7 +36,6 @@
           <p class="subtitle">Candidatura — XXIII Máster en Consultoría Inmobiliaria</p>
         </div>
       </div>
-
       <div class="header-right">
         <img src="images/Foto_ERY.jpg" alt="Foto Emilio" class="profile-photo">
       </div>
@@ -45,14 +44,16 @@
 
   <main>
     <section class="intro card fade-in">
-      <p>¡Hola! 👋 Soy <strong>Emilio</strong>, Data Analyst en Valoraciones y Tasaciones. Aquí te presento mi candidatura de forma dinámica mediante vídeos cortos y directos.</p>
-      <p>La estructura es clara: texto introductorio → título → video. Pulsa en el menú para desplazarte por las secciones.</p>
+      <p>¡Hola! 👋 Soy <strong>Emilio</strong>, Data Analyst en Valoraciones y Tasaciones.  
+      Esta es mi candidatura en formato divertido y dinámico.</p>
+      <p>Prepárate: texto 👉 título 👉 vídeo… ¡y a disfrutar del viaje! 🎢</p>
     </section>
 
+    <!-- Videos -->
     <section id="presentacion" class="card fade-in">
       <h2>🎬 Presentación</h2>
-      <p>Un breve vistazo sobre quién soy, mi experiencia y lo que me mueve profesionalmente.</p>
-      <video controls>
+      <p>Un vistazo a mi trayectoria profesional y personal.</p>
+      <video controls class="video-preview">
         <source src="videos/01. Presentación.mp4" type="video/mp4">
       </video>
       <div class="btn-group">
@@ -63,40 +64,42 @@
 
     <section id="vision" class="card fade-in">
       <h2>🌍 Visión 360º</h2>
-      <p>Por qué una visión transversal del sector marca la diferencia y cómo la aplico en mi trabajo.</p>
-      <video controls>
+      <p>La visión global del sector es clave. Te cuento por qué.</p>
+      <video controls class="video-preview">
         <source src="videos/02. Vision 360.mp4" type="video/mp4">
       </video>
     </section>
 
     <section id="motivacion" class="card fade-in">
       <h2>🔥 Motivación Personal</h2>
-      <p>Qué me impulsa, mis metas y por qué este máster es el siguiente paso ideal.</p>
-      <video controls>
+      <p>Lo que me mueve día a día y mis metas.</p>
+      <video controls class="video-preview">
         <source src="videos/03. Motivacion Personal.mp4" type="video/mp4">
       </video>
     </section>
 
     <section id="caracteristicas" class="card fade-in">
       <h2>💡 Características y Propuesta de Valor</h2>
-      <p>Fortalezas, habilidades y la propuesta que puedo aportar al programa y sus participantes.</p>
-      <video controls>
+      <p>Mis fortalezas y lo que puedo aportar al máster.</p>
+      <video controls class="video-preview">
         <source src="videos/04. Propuesta de valor.mp4" type="video/mp4">
       </video>
     </section>
 
     <section id="ia" class="card fade-in">
-      <h2>🤖 Uso de IA para vivienda accesible</h2>
-      <p>Ideas concretas sobre cómo aplicar IA para facilitar el acceso a la vivienda.</p>
-      <video controls>
+      <h2>🤖 IA para vivienda accesible</h2>
+      <p>Cómo la inteligencia artificial puede ayudar a solucionar retos del acceso a vivienda.</p>
+      <video controls class="video-preview">
         <source src="videos/05. Propuesta uso IA.mp4" type="video/mp4">
       </video>
     </section>
 
     <section id="otros" class="card fade-in">
       <h2>✨ Otros aspectos</h2>
-      <p>Además de lo anterior, ya cursé un máster compaginándolo con jornada completa. Fue un reto intenso que me enseñó disciplina, organización y a mantener la motivación. Estoy convencido (y con ganas) de volver a repetir la experiencia: esta vez con más práctica, energía y sentido del humor — ¡aprender trabajando no tiene por qué ser un drama, puede ser una aventura! 😄💪</p>
-      <video controls>
+      <p>Ya cursé un máster trabajando a jornada completa. Fue duro… pero lo logré.  
+      Aprendí a organizarme, mantener la energía y ¡hasta divertirme en el proceso!  
+      Eso me hace sentir preparado para volver a hacerlo, con más ganas y experiencia. 💪😄</p>
+      <video controls class="video-preview">
         <source src="videos/06. Otros aspectos.mp4" type="video/mp4">
       </video>
     </section>
@@ -110,7 +113,16 @@
   </main>
 
   <footer>
-    <p>Gracias por la oportunidad — Emilio</p>
+    <p>Gracias por la oportunidad 🙏 | Emilio</p>
   </footer>
+
+  <!-- Modal para modo cine -->
+  <div class="modal" id="video-modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <video controls id="modal-video"></video>
+    </div>
+  </div>
 </body>
 </html>
+
