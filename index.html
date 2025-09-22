@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Candidatura Emilio Rodríguez Yustos</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script defer src="script.js"></script>
 </head>
 <body>
+  <!-- Nota antes del menú -->
+  <div class="top-note">Menú de desplazamiento: haz clic para moverte por la página 🚀</div>
+
   <!-- Menú superior -->
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Navegación principal">
     <ul>
       <li><a href="#presentacion">Presentación</a></li>
       <li><a href="#vision">Visión 360º</a></li>
@@ -20,34 +24,34 @@
       <li><a href="#otros">Otros</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
-    <p class="menu-note">Menú de desplazamiento: haz clic para moverte por la página 🚀</p>
   </nav>
 
   <!-- Encabezado -->
-  <header class="main-header">
-    <div class="header-left">
-      <img src="images/Savills.png" alt="Logo Savills" class="logo">
-      <div class="header-text">
-        <h1>Emilio Rodríguez Yustos</h1>
-        <p>Candidatura XXIII Máster en Consultoría Inmobiliaria</p>
+  <header class="main-header" role="banner">
+    <div class="header-inner">
+      <div class="header-left">
+        <img src="images/Savills.png" alt="Savills" class="logo">
+        <div class="header-text">
+          <h1>Emilio Rodríguez Yustos</h1>
+          <p class="subtitle">Candidatura — XXIII Máster en Consultoría Inmobiliaria</p>
+        </div>
       </div>
-    </div>
-    <div class="header-right">
-      <img src="images/Foto_ERY.jpg" alt="Foto Emilio" class="profile-photo">
+
+      <div class="header-right">
+        <img src="images/Foto_ERY.jpg" alt="Foto Emilio" class="profile-photo">
+      </div>
     </div>
   </header>
 
   <main>
     <section class="intro card fade-in">
-      <p>¡Hola! 👋 Soy <strong>Emilio</strong>, actualmente trabajo como <strong>Data Analyst</strong> en el área de Valoraciones y Tasaciones.</p>
-      <p>En esta página os muestro, a través de distintos videos, mi motivación, visión y propuesta de valor para este máster. 🚀</p>
-      <p>¡Os invito a acompañarme en este recorrido!</p>
+      <p>¡Hola! 👋 Soy <strong>Emilio</strong>, Data Analyst en Valoraciones y Tasaciones. Aquí te presento mi candidatura de forma dinámica mediante vídeos cortos y directos.</p>
+      <p>La estructura es clara: texto introductorio → título → video. Pulsa en el menú para desplazarte por las secciones.</p>
     </section>
 
-    <!-- Videos -->
     <section id="presentacion" class="card fade-in">
       <h2>🎬 Presentación</h2>
-      <p>Un breve vistazo sobre quién soy y mi trayectoria profesional.</p>
+      <p>Un breve vistazo sobre quién soy, mi experiencia y lo que me mueve profesionalmente.</p>
       <video controls>
         <source src="videos/01. Presentación.mp4" type="video/mp4">
       </video>
@@ -59,7 +63,7 @@
 
     <section id="vision" class="card fade-in">
       <h2>🌍 Visión 360º</h2>
-      <p>La importancia de ver el sector inmobiliario desde todas sus perspectivas.</p>
+      <p>Por qué una visión transversal del sector marca la diferencia y cómo la aplico en mi trabajo.</p>
       <video controls>
         <source src="videos/02. Vision 360.mp4" type="video/mp4">
       </video>
@@ -67,7 +71,7 @@
 
     <section id="motivacion" class="card fade-in">
       <h2>🔥 Motivación Personal</h2>
-      <p>Qué me impulsa cada día y por qué quiero ser parte de este máster.</p>
+      <p>Qué me impulsa, mis metas y por qué este máster es el siguiente paso ideal.</p>
       <video controls>
         <source src="videos/03. Motivacion Personal.mp4" type="video/mp4">
       </video>
@@ -75,7 +79,7 @@
 
     <section id="caracteristicas" class="card fade-in">
       <h2>💡 Características y Propuesta de Valor</h2>
-      <p>Mis fortalezas personales y profesionales que aporto al programa.</p>
+      <p>Fortalezas, habilidades y la propuesta que puedo aportar al programa y sus participantes.</p>
       <video controls>
         <source src="videos/04. Propuesta de valor.mp4" type="video/mp4">
       </video>
@@ -83,7 +87,7 @@
 
     <section id="ia" class="card fade-in">
       <h2>🤖 Uso de IA para vivienda accesible</h2>
-      <p>Cómo la tecnología puede ayudarnos a resolver los retos de acceso a la vivienda.</p>
+      <p>Ideas concretas sobre cómo aplicar IA para facilitar el acceso a la vivienda.</p>
       <video controls>
         <source src="videos/05. Propuesta uso IA.mp4" type="video/mp4">
       </video>
@@ -91,9 +95,7 @@
 
     <section id="otros" class="card fade-in">
       <h2>✨ Otros aspectos</h2>
-      <p>Además de lo comentado, quiero compartir algo importante: ya he cursado un máster mientras trabajaba a jornada completa 🕒.  
-         Fue un reto, pero también una experiencia que me enseñó a organizarme, a ser constante y a mantener la motivación.  
-         Por eso estoy convencido de que puedo volver a hacerlo… ¡y disfrutar el camino al mismo tiempo! 💪😄</p>
+      <p>Además de lo anterior, ya cursé un máster compaginándolo con jornada completa. Fue un reto intenso que me enseñó disciplina, organización y a mantener la motivación. Estoy convencido (y con ganas) de volver a repetir la experiencia: esta vez con más práctica, energía y sentido del humor — ¡aprender trabajando no tiene por qué ser un drama, puede ser una aventura! 😄💪</p>
       <video controls>
         <source src="videos/06. Otros aspectos.mp4" type="video/mp4">
       </video>
@@ -108,10 +110,7 @@
   </main>
 
   <footer>
-    <p>Gracias por la oportunidad 🙏 | Emilio</p>
+    <p>Gracias por la oportunidad — Emilio</p>
   </footer>
 </body>
 </html>
-
-
-
