@@ -90,3 +90,22 @@ video {
   border-radius: 10px;
   background: #000;
 }
+/* Icono y enlace LinkedIn */
+.linkedin-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.linkedin-link:hover {
+  color: var(--yellow);
+}
+
+.linkedin-icon {
+  height: 22px;
+  width: 22px;
+}
